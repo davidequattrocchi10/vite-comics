@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --menu-active: #0282f9;
+    --menu-text: #6b6d72;
+    --color-footer: #303030;
+    --footer-menu-text: #71766c;
+
+}
