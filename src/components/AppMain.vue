@@ -1,10 +1,91 @@
 <script>
 import AppMainBottom from './AppMainBottom.vue';
+import comicBook from './comicBook.vue';
 
 export default {
     name: 'AppMain',
     components: {
-        AppMainBottom
+        AppMainBottom,
+        comicBook
+    },
+    data() {
+        return {
+            comicBooks: [
+                {
+                    "thumb": "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
+                    "price": "$19.99",
+                    "series": "Action Comics",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://www.panini.it/media/catalog/product/cache/a5b5dd3adfe0d321084804c738f29601/M/1/M1BLLA015ISBN_0.jpg",
+                    "price": "$3.99",
+                    "series": "American Vampire 1976",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://media.wired.com/photos/593384dad80dd005b42b2817/master/w_2560%2Cc_limit/Aquaman-16.jpg",
+                    "price": "$16.99",
+                    "series": "Aquaman",
+                    "type": "graphic novel",
+                },
+                {
+                    "thumb": "https://d29xot63vimef3.cloudfront.net/image/batgirl/1-1.jpg",
+                    "price": "$2.99",
+                    "series": "Batgirl",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.posters.cz/image/750/locandine-film-in-plexiglass-batman-prowl-comic-cover-i69653.jpg",
+                    "price": "$3.99",
+                    "series": "Batman",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/50/Batman_Beyond_v.1_1.jpg",
+                    "price": "$2.99",
+                    "series": "Batman Beyond",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/0/0d/Batman_Superman_Vol_1_1.jpg",
+                    "price": "$3.99",
+                    "series": "Batman/Superman",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/cf/Batman_Superman_Annual_Vol_2_1.jpg",
+                    "price": "$4.99",
+                    "series": "Batman/Superman Annual",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/5/54/Batman_The_Joker_War_Zone_Vol_1_1.jpg",
+                    "price": "$5.99",
+                    "series": "Batman: The Joker War Zone",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/6/64/Batman_Three_Jokers_Collected.jpg",
+                    "price": "$6.99",
+                    "series": "Batman: Three Jokers",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
+                    "price": "$4.99",
+                    "series": "Batman: White Knight Presents: Harley Quinn",
+                    "type": "comic book",
+                },
+                {
+                    "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/c/c8/Catwoman_Vol_2_1.jpg",
+                    "price": "$16.99",
+                    "series": "Catwoman",
+                    "type": "graphic novel",
+                }
+
+            ]
+        }
     }
 
 }
@@ -13,7 +94,23 @@ export default {
 <template>
     <main>
         <div class="main-top">
-            <p> --&gt; Content goes here &lt;-- </p>
+            <img class="imgCurrentSeries" src="/img/jumbotron.jpg" alt="">
+        </div>
+        <div class="main-middle">
+
+            <div class="container">
+                <div class="clickME">
+                    <button>CURRENT SERIES</button>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4  col-lg-2" v-for="book in comicBooks">
+                        <comicBook :imgBook="book.thumb" :textBook="book.series"></comicBook>
+                    </div>
+                </div>
+                <div class="clickME ">
+                    <button class="more">LOAD MORE</button>
+                </div>
+            </div>
         </div>
         <AppMainBottom></AppMainBottom>
 
@@ -22,16 +119,62 @@ export default {
 
 <style scoped>
 main {
-
     & .main-top {
-        padding: 1rem 12rem;
-        color: white;
         display: flex;
+        justify-content: center;
         align-items: center;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+
+        & .imgCurrentSeries {
+            max-width: 100%;
+            width: 200%;
+            height: 630px;
+            position: absolute;
+            top: 10px;
+
+        }
+
+    }
+
+    & .main-middle {
+        padding-top: 3rem;
+        color: white;
         background-color: black;
-        min-height: 150px;
-        font-size: larger;
-        font-weight: bold;
+        padding-bottom: 5rem;
+
+
+        & .clickME {
+            position: relative;
+
+            & .more {
+                position: absolute;
+                bottom: -4rem;
+                left: 42%;
+            }
+
+            & button {
+                position: absolute;
+                bottom: 15px;
+                left: 0%;
+                background-color: var(--menu-active);
+
+                color: white;
+                font-weight: bold;
+                font-size: large;
+                padding: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    filter: hue-rotate(140deg);
+                    border: 1px solid white;
+                }
+
+            }
+
+        }
+
     }
 }
 </style>

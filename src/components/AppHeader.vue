@@ -5,25 +5,27 @@ export default {
 </script>
 
 <template>
-    <header>
-        <div class="logo">
-            <img src="/img/dc-logo.png" alt="Logo DC">
-        </div>
-        <nav>
-            <ul class="main_menu">
-                <li><a href="#">CHARACTERS</a></li>
-                <li><a href="#" class="active">COMICS</a></li>
-                <li><a href="#">MOVIES</a></li>
-                <li><a href="#">TV</a></li>
-                <li><a href="#">GAMES</a></li>
-                <li><a href="#">COLLECTIBLES</a></li>
-                <li><a href="#">VIDEOS</a></li>
-                <li><a href="#">FANS</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SHOP</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/img/dc-logo.png" alt="Logo DC">
+            </div>
+            <nav>
+                <ul class="main_menu">
+                    <li><a href="#">CHARACTERS</a></li>
+                    <li><a href="#" class="active">COMICS</a></li>
+                    <li><a href="#">MOVIES</a></li>
+                    <li><a href="#">TV</a></li>
+                    <li><a href="#">GAMES</a></li>
+                    <li><a href="#">COLLECTIBLES</a></li>
+                    <li><a href="#">VIDEOS</a></li>
+                    <li><a href="#">FANS</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SHOP</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 </template>
 
 
@@ -33,11 +35,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 12rem;
     background-color: white;
+    width: 100%;
 
     & .logo {
-        width: 100%;
+        max-width: 100%;
     }
 
     & ul {

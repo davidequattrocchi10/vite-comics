@@ -8,25 +8,30 @@ export default {
 
 <template>
     <div class="main-bottom">
-        <div class="image-item">
-            <img src="/img/buy-comics-digital-comics.png" alt="Image 1">
-            <div class="image-caption">DIGITAL COMICS</div>
-        </div>
-        <div class="image-item">
-            <img src="/img/buy-comics-merchandise.png" alt="Image 2">
-            <div class="image-caption">DC MERCHANDISE</div>
-        </div>
-        <div class="image-item">
-            <img src="/img/buy-comics-subscriptions.png" alt="Image 3">
-            <p class="image-caption">SUBSCRIPTION</p>
-        </div>
-        <div class="image-item">
-            <img src="/img/buy-comics-shop-locator.png" alt="Image 4">
-            <div class="image-caption">COMIC SHOP LOCATOR</div>
-        </div>
-        <div class="image-item">
-            <img src="/img/buy-dc-power-visa.svg" alt="Image 5">
-            <div class="image-caption">DC POWER VISA</div>
+        <div class="container">
+            <div class="row">
+                <div class="image-item col-12 col-md-4  col-lg-2">
+                    <img src="/img/buy-comics-digital-comics.png" alt="Image 1">
+                    <div class="image-caption">DIGITAL COMICS</div>
+                </div>
+                <div class="image-item col-12 col-md-4  col-lg-2">
+                    <img src="/img/buy-comics-merchandise.png" alt="Image 2">
+                    <div class="image-caption">DC MERCHANDISE</div>
+                </div>
+                <div class="image-item col-12 col-md-4  col-lg-2">
+                    <img src="/img/buy-comics-subscriptions.png" alt="Image 3">
+                    <p class="image-caption">SUBSCRIPTION</p>
+                </div>
+                <div class="image-item col-12 col-md-4  col-lg-2">
+                    <img src="/img/buy-comics-shop-locator.png" alt="Image 4">
+                    <div class="image-caption">COMIC SHOP LOCATOR</div>
+                </div>
+                <div class="image-item col-12 col-md-4  col-lg-2">
+                    <img src="/img/buy-dc-power-visa.svg" alt="Image 5">
+                    <div class="image-caption">DC POWER VISA</div>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
@@ -35,15 +40,13 @@ export default {
 
 <style scoped>
 .main-bottom {
-    padding: 1rem 12rem;
     color: white;
-    display: flex;
     background-color: var(--menu-active);
-    min-height: 150px;
+    min-height: 125px;
 
 
     & .image-item {
-        margin-left: 50px;
+        margin: 15px;
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
